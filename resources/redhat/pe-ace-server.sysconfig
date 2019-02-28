@@ -1,0 +1,2 @@
+# You may specify parameters to the PE ACE Server here
+#PE_ACE_SERVER_OPTIONS=--loglevel=debug

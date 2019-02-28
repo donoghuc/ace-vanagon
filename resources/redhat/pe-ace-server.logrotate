@@ -1,0 +1,11 @@
+/var/log/puppetlabs/ace-server/*.log {
+    daily
+    missingok
+    rotate 30
+    compress
+    notifempty
+    sharedscripts
+    postrotate
+        if [ -s /var/run/puppetlabs/ace-server/ace-server.pid ]; then kill -HUP `cat /var/run/puppetlabs/ace-server/ace-server.pid`; fi
+    endscript
+}
