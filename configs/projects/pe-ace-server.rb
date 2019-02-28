@@ -25,6 +25,9 @@ project "pe-ace-server" do |proj|
   proj.setting(:artifactory_url, "https://artifactory.delivery.puppetlabs.net/artifactory")
   proj.setting(:buildsources_url, "#{proj.artifactory_url}/generic/buildsources")
 
+  proj.setting(:link_bindir, "/opt/puppetlabs/bin")
+  proj.setting(:main_bin, "/usr/local/bin")
+
   proj.user(proj.pe_ace_user,
             group: proj.pe_ace_user,
             shell: '/sbin/nologin',
@@ -52,6 +55,7 @@ project "pe-ace-server" do |proj|
 
   proj.directory proj.prefix
   proj.directory proj.homedir
+  proj.directory proj.link_bindir
 
   services.each do |_, short|
     proj.directory proj.send("#{short}_sysconfdir")

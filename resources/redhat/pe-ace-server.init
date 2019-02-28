@@ -40,7 +40,7 @@ fi
 start() {
     echo -n $"Starting PE ACE Server: "
     mkdir -p $piddir $logdir
-    daemon $daemonopts --user=$owner $exec -C "${prefix}/config/puma_config.rb" -e production -d --pidfile $pidfile ${PE_ACE_SERVER_OPTIONS}
+    daemon $daemonopts --user=$owner $exec -C "${prefix}/config/transport_tasks_config.rb" -e production -d --pidfile $pidfile ${PE_ACE_SERVER_OPTIONS}
     RETVAL=$?
     echo
     [ $RETVAL = 0 ] && touch ${lockfile}

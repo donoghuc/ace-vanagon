@@ -1,4 +1,4 @@
-component "bolt" do |pkg, settings, platform|
+component "ace" do |pkg, settings, platform|
   pkg.load_from_json('configs/components/ace.json')
 
   pkg.build_requires 'rubygem-r10k'
@@ -26,7 +26,7 @@ component "bolt" do |pkg, settings, platform|
     pkg.install_file "../PuppetBolt.psm1", "#{settings[:datadir]}/PowerShell/Modules/PuppetBolt/PuppetBolt.psm1"
   else
     pkg.add_source("file://resources/files/posix/ace_env_wrapper", sum: "644f069f275f44af277b20a2d0d279c6")
-    ace_exe = File.join(settings[:link_bindir], 'ace')
+    ace_exe = File.join(settings[:link_bindir], 'agentless-catalog-executor')
     pkg.install_file "../ace_env_wrapper", ace_exe, mode: "0755"
 
     if platform.is_macos?

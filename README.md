@@ -24,7 +24,7 @@ After mirroring gems, rerun the script to update their component configs.
 
 ```
 bundle install
-bundle exec build puppet-ace el-7-x86_64
+bundle exec build pe-ace-server el-7-x86_64
 ```
 
 If the packaging works, it will place a package in the `output/` folder.
