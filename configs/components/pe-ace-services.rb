@@ -12,7 +12,7 @@ component "pe-ace-services" do |pkg, settings, platform|
     ["#{settings[:gem_install]} agentless-catalog-executor-*.gem"]
   end
 
-  pkg.install_file('puma_config.rb', "#{settings[:prefix]}/config/puma_config.rb")
+  pkg.install_file('config/transport_tasks_config.rb', "#{settings[:prefix]}/config/transport_tasks_config.rb")
 
   case platform.servicetype
   when "systemd"
