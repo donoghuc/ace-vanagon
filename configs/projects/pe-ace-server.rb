@@ -1,4 +1,8 @@
 project "pe-ace-server" do |proj|
+  proj.license "See components"
+  proj.vendor "Puppet, Inc.  <info@puppet.com>"
+  proj.homepage "https://www.puppet.com"
+  proj.identifier "com.puppetlabs"
   proj.description 'Service to expose ace transports'
   # We can just have the same version as ace, and use tags for specific packages
   proj.version_from_git
@@ -34,23 +38,7 @@ project "pe-ace-server" do |proj|
             homedir: "#{proj.homedir}",
             is_system: true)
 
-  # R10k dependency
-  proj.component 'rubygem-gettext-setup'
-  # ACE dependencies that aren't included in Puppet on our platforms yet
-  proj.component 'rubygem-ffi'
-  proj.component 'rubygem-minitar'
-
-  proj.instance_eval File.read('configs/projects/ace-shared.rb')
-
-  # Webserver dependencies
-  proj.component 'rubygem-json-schema'
-  proj.component 'rubygem-rack'
-  proj.component 'rubygem-tilt'
-  proj.component 'rubygem-rack-protection'
-  proj.component 'rubygem-mustermann'
-  proj.component 'rubygem-sinatra'
   proj.component 'rubygem-puma'
-  proj.component 'rubygem-rails-auth'
   proj.component 'pe-ace-services'
 
   proj.directory proj.prefix
