@@ -1,5 +1,5 @@
 component "rubygem-puma" do |pkg, settings, platform|
-  pkg.version "3.12.0"
-  pkg.md5sum "edd31875638ae3ef22ba116a6977276b"
+  pkg.version "3.12.1"
+  pkg.md5sum "8349b8ff0f55e0a8d5833580e8139c3c"
   instance_eval File.read('configs/components/_base-rubygem.rb')
 end
