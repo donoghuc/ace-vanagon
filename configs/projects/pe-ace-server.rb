@@ -39,6 +39,7 @@ project "pe-ace-server" do |proj|
             is_system: true)
 
   proj.component 'rubygem-puma'
+  proj.component 'rubygem-net-ssh-telnet'
   proj.component 'pe-ace-services'
 
   proj.directory proj.prefix
