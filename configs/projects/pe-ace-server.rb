@@ -29,6 +29,9 @@ project "pe-ace-server" do |proj|
   proj.setting(:artifactory_url, "https://artifactory.delivery.puppetlabs.net/artifactory")
   proj.setting(:buildsources_url, "#{proj.artifactory_url}/generic/buildsources")
 
+  # MANAGE PE VERSION HERE INSTEAD OF IN A FILE
+  proj.setting(:pe_version, ENV['PE_VERSION'] || 'master')
+
   proj.setting(:link_bindir, "/opt/puppetlabs/bin")
   proj.setting(:main_bin, "/usr/local/bin")
 
@@ -38,6 +41,7 @@ project "pe-ace-server" do |proj|
             homedir: "#{proj.homedir}",
             is_system: true)
 
+  proj.component 'shared-build-repo'
   proj.component 'rubygem-nio4r'
   proj.component 'rubygem-puma'
   proj.component 'rubygem-net-ssh-telnet'
