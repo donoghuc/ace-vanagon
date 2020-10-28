@@ -24,13 +24,13 @@ project "pe-ace-server" do |proj|
   proj.setting(:libdir, "#{proj.prefix}/lib")
   proj.setting(:homedir, "/opt/puppetlabs/server/data/ace-server")
   proj.setting(:gem_home, File.join(proj.libdir, 'ruby'))
-  proj.setting(:gem_install, "/opt/puppetlabs/puppet/bin/gem install --no-rdoc --no-ri --local --bindir=#{proj.bindir}")
+  proj.setting(:gem_install, "/opt/puppetlabs/puppet/bin/gem install --no-document --local --bindir=#{proj.bindir}")
   proj.setting(:gem_build, "/opt/puppetlabs/puppet/bin/gem build")
   proj.setting(:artifactory_url, "https://artifactory.delivery.puppetlabs.net/artifactory")
   proj.setting(:buildsources_url, "#{proj.artifactory_url}/generic/buildsources")
 
   # MANAGE PE VERSION HERE INSTEAD OF IN A FILE
-  proj.setting(:pe_version, ENV['PE_VERSION'] || 'master')
+  proj.setting(:pe_version, ENV['PE_VERSION'] || 'main')
 
   proj.setting(:link_bindir, "/opt/puppetlabs/bin")
   proj.setting(:main_bin, "/usr/local/bin")
