@@ -8,6 +8,7 @@ Group=pe-ace-server
 EnvironmentFile=-/etc/sysconfig/pe-ace-server-service
 EnvironmentFile=-/etc/default/pe-ace-server-service
 Environment=GEM_PATH=/opt/puppetlabs/server/apps/ace-server/lib/ruby:/opt/puppetlabs/server/apps/bolt-server/lib/ruby
+Environment=GEM_HOME=/opt/puppetlabs/server/apps/ace-server/lib/ruby:/opt/puppetlabs/server/apps/bolt-server/lib/ruby
 ExecStart=/opt/puppetlabs/server/apps/ace-server/bin/puma -C /opt/puppetlabs/server/apps/ace-server/config/transport_tasks_config.rb -e production
 Restart=always
 #set default privileges to -rw-r-----

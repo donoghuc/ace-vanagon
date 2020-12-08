@@ -18,6 +18,7 @@ umask 027
 prefix='/opt/puppetlabs/server/apps/ace-server'
 bolt_server='/opt/puppetlabs/server/apps/bolt-server'
 export GEM_PATH="${prefix}/lib/ruby:${bolt_server}/lib/ruby"
+export GEM_HOME="${prefix}/lib/ruby:${bolt_server}/lib/ruby"
 exec="${prefix}/bin/puma"
 prog="ace-server"
 desc="PE ACE Server"
