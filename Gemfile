@@ -10,9 +10,9 @@ def location_for(place)
   end
 end
 
-gem "beaker-hostgenerator", *location_for(ENV['BEAKER_HOSTGENERATOR_VERSION'] || "~> 0.7")
-gem "beaker-abs", *location_for(ENV['BEAKER_ABS_VERSION'] || "~> 0.1")
-gem 'vanagon', *location_for(ENV['VANAGON_LOCATION'] || '~> 0.21')
-gem 'packaging', *location_for(ENV['PACKAGING_LOCATION'] || '~> 0.99.7')
+gem 'beaker-hostgenerator', *location_for(ENV['BEAKER_HOSTGENERATOR_VERSION'] || '>= 1.13.0')
+gem 'beaker-abs', *location_for(ENV['BEAKER_ABS_VERSION'] || '>= 0.10.1')
+gem 'vanagon', *location_for(ENV['VANAGON_LOCATION'] || '>= 0.26.3')
+gem 'packaging', *location_for(ENV['PACKAGING_LOCATION'] || '>= 0.106.2')
 gem 'json'
 gem 'rake'
