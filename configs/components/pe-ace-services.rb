@@ -1,6 +1,6 @@
 component "pe-ace-services" do |pkg, settings, platform|
   pkg.environment "GEM_HOME", settings[:gem_home]
-  pkg.environment "GEM_PATH", '/opt/puppetlabs/server/apps/ace-server/lib/ruby:/opt/puppetlabs/server/apps/bolt-server/lib/ruby:/opt/puppetlabs/puppet/lib/ruby/gems/2.5.0:/opt/puppetlabs/puppet/lib/ruby/vendor_gems'
+  pkg.environment "GEM_PATH", '/opt/puppetlabs/server/apps/ace-server/lib/ruby:/opt/puppetlabs/server/apps/bolt-server/lib/ruby:/opt/puppetlabs/server/apps/bolt-server/lib/ruby/gems/3.2.0:/opt/puppetlabs/puppet/lib/ruby/gems/3.2.0:/opt/puppetlabs/puppet/lib/ruby/vendor_gems'
   pkg.environment "PATH", "#{settings[:bindir]}:$$PATH"
   pkg.load_from_json('configs/components/ace.json')
   pkg.build_requires 'puppet-agent'
